@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block title %}Add_product{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <input name="title" id="title" placeholder="title*" type="text"/>
+        <input name="description" id="description" placeholder="description*" type="text"/>
+        <input name="price" id="price" placeholder="price*" type="number"/>
+        <input type="submit"/>
+    </form>
+{% endblock %}

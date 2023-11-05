@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block content %}
+    <h1>Products</h1>
+    <div class="container">
+    <div>
+    {% for item in items %}
+        <img src="https://th.bing.com/th/id/OIP.HY4VvtthfhR6GBAArRdxUQHaEe?pid=ImgDet&rs=1" width="80" height="80"/>
+        <h3>{{ item .id  }}</h3>    
+        <a href="/Products/{{  item.id  }}">Czytaj wiecej</a>
+    {% endfor %}
+    </div>
+    </div>
+{% endblock %}
