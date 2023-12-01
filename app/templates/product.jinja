@@ -1,10 +1,10 @@
-{% extends 'index.html' %}
+{% extends 'index.html.jinja' %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    {{ data['title'] }}
-    {{ data['description'] }}
-    {{ data['price'] }}
-    <h1>Products</h1>
+    <h1>{{data ['title']}}</h1>
+    <p>{{ data['description'] }}</p>
+    <p>{{ data['price'] }}</p>
+    {# <h1>Products</h1> #}
 {% endblock %}

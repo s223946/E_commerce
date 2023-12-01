@@ -1,6 +1,6 @@
-{% extends 'index.html' %}
+{% extends 'index.html.jinja' %}
 
-{% block title %}Sign in{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
     <h1>Products</h1>
@@ -8,8 +8,8 @@
     <div>
     {% for item in items %}
         <img src="https://th.bing.com/th/id/OIP.HY4VvtthfhR6GBAArRdxUQHaEe?pid=ImgDet&rs=1" width="80" height="80"/>
-        <h3>{{ item .id  }}</h3>    
-        <a href="/Products/{{  item.id  }}">Czytaj wiecej</a>
+        <h3>{{ item.id  }}</h3>    
+        <p><a href="/Products/{{  item.id  }}">Czytaj wiecej</a></p>
     {% endfor %}
     </div>
     </div>

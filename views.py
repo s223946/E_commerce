@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request    
-from connection import read_products, get_info_about_product, add_item
+from connection import Product
 
 app = Flask(__name__, template_folder="app/templates")
- 
+db = Product()
+
 @app.route('/')
 def index():
-    return render_template('Products.jinja',items = read_products())
-
+    return render_template('Products.jinja',items = db.read_products())
 
 @app.route('/add_product', methods=['GET','POST'])
 def add_product():
@@ -16,12 +16,12 @@ def add_product():
             'description':request.form['description'],
             'price':request.form['price'],
         }
-        add_item(data_set)
+        db.add_item(data_set)
     return render_template('add_product.jinja')
 
 @app.route('/Products/<title>')
 def product(title):
-    product_info = get_info_about_product(title)
+    product_info = db.get_info_about_item(title)
     return render_template('product.jinja',data=product_info)
 
     
